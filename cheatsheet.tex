@@ -1,0 +1,96 @@
+\begin{comment}
+% ----------------------------------------------------------------
+% CheatSheet
+% ----------------------------------------------------------------
+% equation
+\[  \]
+% or
+\begin{align}
+    
+\end{align}
+
+
+% insert figure
+\begin{figure}
+    \centering
+    \includegraphics[width=80mm]{./figs/example.eps}
+    \caption{caption}
+    \label{fig:example}
+\end{figure}
+
+
+% insert table (for picture)
+\begin{table}
+    \caption{caption}
+    \label{table:example}
+    \centering
+    \includegraphics[width=100mm]{./tables/example.eps}
+\end{table}
+
+
+% insert table
+\begin{table}
+    \caption{caption}
+    \label{table:example}
+    \begin{tabular}{|l|c|r|r|}
+        \hline header1 & header2 & header3 \\ \hline \hline
+        cell1.1 & cell1.2 & cell1.3 \\ \hline
+        cell2.1 & cell2.2 & cell2.3 \\ \hline
+    \end{tabular}
+\end{table}
+
+
+% subfigure
+\begin{figure}[htbp]
+    \subfigure[caption1]{
+        \includegraphics[width=80mm]{./figs/example1.eps}
+        \label{fig:example1}
+    }
+    \subfigure[caption2]{
+        \includegraphics[width=80mm]{./figs/example2.eps}
+        \label{fig:example2}
+    }
+    \caption{caption}
+    \label{fig:example}
+\end{figure}
+
+
+% (1), (2), (3)...
+\begin{enumerate}[label=(\arabic*)]
+    \item 
+    \item 
+    \item 
+\end{enumerate}
+
+
+% definition and description
+\begin{description}
+    \item[Earth]~\\
+    The Earth is the third planet from the Sun and it is the only planet known to have life on it. ...
+\end{description}
+
+
+% insert list
+\lstinputlisting[language=bash, frame=tlrb, caption={example.sh}, label={list:example_sh}]{./src/example.sh}
+
+
+% <code> ... </code> 
+\begin{verbatim}
+int a %= 4;
+\end{verbatim}
+
+\verb|int a|
+
+
+% hamiltonian
+\mathscr{H}
+
+
+% URL
+\url{http://www.example.com}
+\href{http://www.example.com}{display text}
+
+
+% text styles
+\textbf{...}, \emph{...}, \textit{...}, \textmd{...}, \textrm{...}, \textsc{...}, \textsf{...}, \textsl{...}, \texttt{...}, \textup{...}
+\end{comment}
