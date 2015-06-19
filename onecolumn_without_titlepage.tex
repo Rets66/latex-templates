@@ -18,12 +18,13 @@
 \usepackage{bm}
 \usepackage{ntheorem}
 \usepackage{comment}
-\usepackage{ascmac}				% \begin{itembox | screen | boxnote | shadebox}
-\usepackage{float}				% [htbp]
-\usepackage{subfigure}
+\usepackage{ascmac}
+\usepackage{float}
+\usepackage{subcaption}
 \usepackage[dvipdfmx]{hyperref}
-\usepackage[dvipdfmx]{graphicx}	% extractbb example.{png | jpg | ...etc.}
-\usepackage{enumitem}			% \begin{enumerate}[(1)] \item ... \end{enumetate}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumitem}
+\usepackage{mediabb}
 %
 %
 % layout settings
@@ -45,9 +46,9 @@
 % subsubsubsection
 \makeatletter
 \newcommand{\subsubsubsection}{\@startsection{paragraph}{4}{\z@}%
-	{1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
-	{.1\Cvs \@plus.3\Cdp}%
-	{\reset@font\sffamily\normalsize}
+    {1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
+    {.1\Cvs \@plus.3\Cdp}%
+    {\reset@font\sffamily\normalsize}
 }
 %
 %
@@ -89,6 +90,7 @@
 	tabsize=2
 }
 \end{comment}
+%
 % 図と図の間の余白
 %\setlength\floatsep{0truemm}
 % 本文と図の間の余白
@@ -100,17 +102,29 @@
 %
 % title
 \title{タイトル}
-\author{113XXXXXXX 岐阜 太郎 \footnote{岐阜大学 工学部 電気電子・情報工学科 情報コースn年}}
+\author{XXXXXXXXXX 岐阜太郎 \footnote{岐阜大学 工学部 電気電子・情報工学科 情報コースn年}}
 \date{\today}
 %
 % ----------------------------------------------------------------
 \begin{document}
-%\linesparpage{50}
+%\linesparpage{40}
 %
 % title page
 \maketitle
 %
 % 本文
+本文
+%
+% 参考文献（\cite{key} で参照）
+\begin{thebibliography}{9}
+    \bibitem{key1} 岐阜太郎, 岐阜二郎, ``岐阜に関する研究,'' 岐阜雑誌, pp.0-1, 2015.
+    \bibitem{key2} 岐阜太郎, 岐阜三郎, ``岐阜に関する研究2,'' 岐阜雑誌, pp.0-2, 2015.
+\end{thebibliography}
+%
+% 付録
+\appendix
+\section{サンプル}
+
 %
 \end{document}
 % ----------------------------------------------------------------
