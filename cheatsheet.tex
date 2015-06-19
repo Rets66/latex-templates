@@ -1,41 +1,57 @@
 \begin{comment}
 % ----------------------------------------------------------------
 % CheatSheet
+%
+% import packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{ntheorem}
+\usepackage{comment}
+\usepackage{ascmac}             % \begin{itembox, screen, boxnote, shadebox}
+\usepackage{float}				% [htbp] で位置指定を可能にする
+\usepackage{subcaption}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage[dvipdfmx]{graphicx}	% extractbb example.{png, jpg, ..., etc.} した画像を貼る
+\usepackage{enumitem}           % enumitem でスタイルの変更を容易にする
 % ----------------------------------------------------------------
+
+
 % equation
 \[  \]
-% or
+
 \begin{align}
-    
 \end{align}
 
 
 % insert figure
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=80mm]{./figs/example.eps}
+    \includegraphics[width=120mm]{./figs/example.pdf}
     \caption{caption}
     \label{fig:example}
 \end{figure}
 
 
-% insert table (for picture)
-\begin{table}
+% insert table (with image file)
+\begin{table}[htbp]
+    \centering
     \caption{caption}
     \label{table:example}
-    \centering
-    \includegraphics[width=100mm]{./tables/example.eps}
+    \includegraphics[width=120mm]{./tables/example.pdf}
 \end{table}
 
 
 % insert table
-\begin{table}
+\begin{table}[htbp]
+    \centering
     \caption{caption}
     \label{table:example}
-    \begin{tabular}{|l|c|r|r|}
-        \hline header1 & header2 & header3 \\ \hline \hline
-        cell1.1 & cell1.2 & cell1.3 \\ \hline
-        cell2.1 & cell2.2 & cell2.3 \\ \hline
+    \begin{tabular}{l|l}
+        \hline \hline header1 & header2 \\ \hline
+        cell1.1 & cell1.2 \\
+        cell2.1 & cell2.2 \\
     \end{tabular}
 \end{table}
 
@@ -55,8 +71,31 @@
 \end{figure}
 
 
-% (1), (2), (3)...
+% subcaption
+\begin{figure}[htbp]
+	\centering
+	\subcaptionbox{caption1\label{fig:example1}}[0.49\linewidth]
+	{\includegraphics[width=80mm]{./figs/example1.pdf}}
+	\subcaptionbox{caption2\label{fig:example2}}[0.49\linewidth]
+	{\includegraphics[width=80mm]{./figs/example2.pdf}}
+	
+	\subcaptionbox{caption3\label{fig:example3}}[0.49\linewidth]
+	{\includegraphics[width=80mm]{./figs/example3.pdf}}
+	
+	\caption{caption}\label{fig:example}
+\end{figure}
+
+
+% (1), (2), (3), ...
 \begin{enumerate}[label=(\arabic*)]
+    \item 
+    \item 
+    \item 
+\end{enumerate}
+
+
+% (a), (b), (c), ...
+\begin{enumerate}[label=(\alph*)]
     \item 
     \item 
     \item 
@@ -71,7 +110,7 @@
 
 
 % insert list
-\lstinputlisting[language=bash, frame=tlrb, caption={example.sh}, label={list:example_sh}]{./src/example.sh}
+\lstinputlisting[language=c, frame=tlrb, caption={example.c}, label={list:example_c}]{./src/example.c}
 
 
 % <code> ... </code> 
@@ -92,5 +131,17 @@ int a %= 4;
 
 
 % text styles
-\textbf{...}, \emph{...}, \textit{...}, \textmd{...}, \textrm{...}, \textsc{...}, \textsf{...}, \textsl{...}, \texttt{...}, \textup{...}
+\textbf{...}, 
+\emph{...}, 
+\textit{...}, 
+\textmd{...}, 
+\textrm{...}, 
+\textsc{...}, 
+\textsf{...}, 
+\textsl{...}, 
+\texttt{...}, 
+\textup{...}
+
+
+%
 \end{comment}
