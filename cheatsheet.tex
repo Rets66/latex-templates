@@ -1,21 +1,4 @@
 \begin{comment}
-% ----------------------------------------------------------------
-% CheatSheet
-%
-% import packages
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{mathrsfs}
-\usepackage{bm}
-\usepackage{ntheorem}
-\usepackage{comment}
-\usepackage{ascmac}             % \begin{itembox, screen, boxnote, shadebox}
-\usepackage{float}				% [htbp] で位置指定を可能にする
-\usepackage{subcaption}
-\usepackage[dvipdfmx]{hyperref}
-\usepackage[dvipdfmx]{graphicx}	% extractbb example.{png, jpg, ..., etc.} した画像を貼る
-\usepackage{enumitem}           % enumitem でスタイルの変更を容易にする
-% ----------------------------------------------------------------
 
 
 % equation
@@ -54,21 +37,6 @@
         cell2.1 & cell2.2 \\
     \end{tabular}
 \end{table}
-
-
-% subfigure
-\begin{figure}[htbp]
-    \subfigure[caption1]{
-        \includegraphics[width=80mm]{./figs/example1.eps}
-        \label{fig:example1}
-    }
-    \subfigure[caption2]{
-        \includegraphics[width=80mm]{./figs/example2.eps}
-        \label{fig:example2}
-    }
-    \caption{caption}
-    \label{fig:example}
-\end{figure}
 
 
 % subcaption
@@ -143,5 +111,4 @@ int a %= 4;
 \textup{...}
 
 
-%
 \end{comment}
