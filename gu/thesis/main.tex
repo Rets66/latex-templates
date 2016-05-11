@@ -1,5 +1,5 @@
 % Document class
-\documentclass[10pt, a4paper, twocolumn]{jsarticle}
+\documentclass[a4j, 12pt, oneside]{jsbook}
 %
 %
 % Table of contents fix
@@ -29,10 +29,10 @@
 % ----------------------------------------------------------------
 % Margin
 \usepackage[
-  top     = 29truemm,
-  bottom  = 24truemm,
-  left    = 20truemm,
-  right   = 20truemm
+  top     = 30truemm,
+  bottom  = 25truemm,
+  left    = 30truemm,
+  right   = 30truemm,
 ]{geometry}
 %
 %\setlength\floatsep{0truemm}						% 図と図の間の余白
@@ -44,10 +44,25 @@
 \captionsetup{format=plain, labelformat=simple, labelsep=quad, font=normalsize}
 %
 % Contents depth
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 %
-% Page style
-\pagestyle{empty}
+% Page number style
+\makeatletter
+\def\ps@plainfoot{%
+  \let\@mkboth\@gobbletwo
+  \let\@oddhead\@empty
+  \def\@oddfoot{\normalfont\hfil-- \thepage\ --\hfil}%
+  \let\@evenhead\@empty
+  \let\@evenfoot\@oddfoot}
+\let\ps@plain\ps@plainfoot
+\makeatother
+\pagestyle{plain}
+%
+\setlength\footskip{2\baselineskip}
+\addtolength{\textheight}{-2\baselineskip}
+%
+% Section font
+\renewcommand{\headfont}{\bfseries}
 %
 % Bibliography style
 %\bibliographystyle{jplain}
@@ -96,38 +111,33 @@
 \def\linesparpage#1{\baselineskip=\textheight
   \divide\baselineskip by #1}
 %
-%
-% ----------------------------------------------------------------
-% Title
-% ----------------------------------------------------------------
-\setcounter{footnote}{-1}
-\title{
-  タイトル
-  \footnote{Title}
-}
-\author{
-  白石 裕輝
-  \setcounter{footnote}{1}
-  \thanks{
-    Yuki \textsc{Shiraishi},
-    Department of Electrical, Electronics and Computer Engineering, Faculty of Engineering, Gifu University
-  }
-  \\
-  {\small 岐阜大学 工学部 電気電子・情報工学科}
-}
-\date{}
-%
-%
 % ----------------------------------------------------------------
 % Document
 % ----------------------------------------------------------------
 \begin{document}
-%
-% Make title
-\maketitle
-%
-% Body
-本文
-%
-%
+  % Lines par page
+  % \linesparpage{32}
+  %
+  % Title
+  \include{title}
+  \maketitle
+  %
+  % Front matter
+  \frontmatter
+  \include{abstract}
+  \tableofcontents
+  %
+  % Main matter
+  \mainmatter
+  \include{introduction}
+  \include{related_works}
+  % \include{Proposed Method}
+  % \include{evaluation}
+  % \include{conclusion}
+  %
+  % Back matter
+  \backmatter
+  % Appendix here
+  % References here
+  %
 \end{document}
