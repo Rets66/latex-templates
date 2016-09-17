@@ -11,7 +11,8 @@
 \usepackage{latexsym}                 % シンボル
 \usepackage[amsmath]{ntheorem}        % 定理
 \usepackage{bm}                       % 太字ベクトル
-% \usepackage{algorithmic, algorithm}   % 疑似コード
+% \usepackage{algorithm}                % アルゴリズム
+% \usepackage[noend]{algpseudocode}     % 疑似コード
 \usepackage{booktabs}                 % 罫線
 \usepackage{float}                    % 図表の配置
 \usepackage[hiresbb]{graphicx}        % 画像の挿入
@@ -56,6 +57,9 @@
 % Section font
 \renewcommand{\headfont}{\bfseries}
 
+% Algorithm w/o ``do''
+% \algrenewcommand\algorithmicdo{}
+
 % ----------------------------------------------------------------
 % Commands
 % ----------------------------------------------------------------
@@ -77,6 +81,11 @@
 % \argmax, \argmin
 \newcommand{\argmax}{\operatornamewithlimits{\mathrm{arg\,max}}}
 \newcommand{\argmin}{\operatornamewithlimits{\mathrm{arg\,min}}}
+
+% \ForTo
+% \algnewcommand\algorithmicto{\textbf{to}}
+% \algdef{SE}[FOR]{ForTo}{EndFor}[2]{\algorithmicfor\ #1\ \algorithmicto\ #2\ \algorithmicdo}{\algorithmicend\ \algorithmicfor}%
+% algtext*{EndFor}
 
 % ----------------------------------------------------------------
 % Title
