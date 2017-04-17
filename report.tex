@@ -1,31 +1,34 @@
-% ----------------------------------------------------------------
+% --------------------------------
 % Document class
-% ----------------------------------------------------------------
-\documentclass[a4paper, dvipdfmx, 12pt]{jsarticle}
+% --------------------------------
+\documentclass[
+  uplatex,
+  dvipdfmx,
+  a4paper,
+  english,
+  twocolumn,
+  10pt
+]{jsarticle}
 
-% ----------------------------------------------------------------
+% -------------------------------
 % Import packages
-% ----------------------------------------------------------------
-\usepackage{amsmath, amssymb}         % 数式，シンボル
-% \usepackage{newtxtext, newtxmath}     % 新 TX フォント
-\usepackage{latexsym}                 % シンボル
-\usepackage[amsmath]{ntheorem}        % 定理
-\usepackage{bm}                       % 太字ベクトル
-% \usepackage{algorithm}                % アルゴリズム
-% \usepackage[noend]{algpseudocode}     % 疑似コード
-\usepackage{booktabs}                 % 罫線
-\usepackage{float}                    % 図表の配置
-\usepackage[hiresbb]{graphicx}        % 画像の挿入
-\usepackage{hyperref}                 % ハイパーリンク
-\usepackage{subcaption}               % サブキャプション
-\usepackage{enumitem}                 % 箇条書きの書式変更
-\usepackage{array}                    % 表の罫線が繋がらない問題対策
-\usepackage{pxjahyper}                % hyperref の文字化け対策
+% -------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
+\usepackage{latexsym}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[hiresbb]{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{pxjahyper}
 
-% ----------------------------------------------------------------
-% Page settings
-% ----------------------------------------------------------------
-% Margin
+% --------------------------------
+% Margin setting
+% --------------------------------
 \usepackage[
   driver  = dvipdfm,
   truedimen,
@@ -35,82 +38,61 @@
   right   = 20truemm
 ]{geometry}
 
-%\setlength\floatsep{0truemm}           % 図と図の間の余白
-%\setlength\textfloatsep{0truemm}       % 本文と図の間の余白
-%\setlength\intextsep{0truemm}          % 本文中の図の余白
-%\setlength\abovecaptionskip{0truemm}   % 図とキャプションの間の余白
-
-% Page style
-% \pagestyle{empty}
-
-% Contents depth
-\setcounter{tocdepth}{2}
-
-% Caption style
-\captionsetup{
-  format      = plain,
-  labelformat = simple,
-  labelsep    = quad,
-  font        = normalsize
-}
-
-% Section font
+% --------------------------------
+% Style setting
+% --------------------------------
 \renewcommand{\headfont}{\bfseries}
 
-% Algorithm w/o ``do''
-% \algrenewcommand\algorithmicdo{}
+\pagestyle{empty}
 
-% ----------------------------------------------------------------
-% Commands
-% ----------------------------------------------------------------
-\makeatletter
-
-% \begin{theorem}
-\theorembodyfont{\normalfont}
-\newtheorem{definition}{定義}[section]
-\newtheorem{theorem}{定理}[section]
-\newtheorem{lemma}{補題}[section]
-\newtheorem{proposition}{命題}[section]
-\newtheorem{axiom}{公理}[section]
-\newtheorem{corollary}{系}[section]
-\newtheorem{proof}{証明}[section]
-
-% \qed
-\def\qed{\hfill $\Box$}
-
-% \argmax, \argmin
-\newcommand{\argmax}{\operatornamewithlimits{\mathrm{arg\,max}}}
-\newcommand{\argmin}{\operatornamewithlimits{\mathrm{arg\,min}}}
-
-% \ForTo
-% \algnewcommand\algorithmicto{\textbf{to}}
-% \algdef{SE}[FOR]{ForTo}{EndFor}[2]{\algorithmicfor\ #1\ \algorithmicto\ #2\ \algorithmicdo}{\algorithmicend\ \algorithmicfor}%
-% algtext*{EndFor}
-
-% ----------------------------------------------------------------
-% Title
-% ----------------------------------------------------------------
-\setcounter{footnote}{-1}
+% --------------------------------
+% Title, author, date
+% --------------------------------
+\setcounter{footnote}{1}
 \title{
-  レポート
-  \footnote{Report}
+  \textbf{Report}
 }
 \author{
-  白石 裕輝
-  \setcounter{footnote}{1}
-  \thanks{
-    Yuki \textsc{Shiraishi},
-    Department of Electrical, Electronics and Computer Engineering,
-    Faculty of Engineering, Gifu University, Japan.
-  }
-  \\
-  {\small 岐阜大学 工学部 電気電子・情報工学科}
+  Yuki \textsc{Shiraishi}~\thanks{Laboratory for Cyber Resilience, Graduate School of Information Science, Nara Institute of Science and Technology, Japan}
 }
-\date{}
+\date{\today}
 
-% ----------------------------------------------------------------
+% --------------------------------
 % Document
-% ----------------------------------------------------------------
+% --------------------------------
 \begin{document}
-  \maketitle
+
+\maketitle
+
+% Your document here...
+\section{Lorem Ipsum}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Lorem Ipsum}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Lorem Ipsum}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\section{Lorem Ipsum}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Lorem Ipsum}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 \end{document}
