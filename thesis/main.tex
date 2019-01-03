@@ -1,0 +1,129 @@
+% ----------------------------------------------------------------
+% Document class
+% ----------------------------------------------------------------
+\documentclass[a4paper, dvipdfmx, oneside, 12pt]{jsbook}
+
+% ----------------------------------------------------------------
+% Import packages
+% ----------------------------------------------------------------
+\usepackage{amsmath, amssymb}         % 数式，シンボル
+% \usepackage{newtxtext, newtxmath}   % 新 TX フォント
+\usepackage{latexsym}                 % シンボル
+\usepackage[amsmath]{ntheorem}        % 定理
+\usepackage{bm}                       % 太字ベクトル
+% \usepackage{algorithm}              % アルゴリズム
+% \usepackage[noend]{algpseudocode}   % 疑似コード
+\usepackage{booktabs}                 % 罫線
+\usepackage{float}                    % 図表の配置
+\usepackage[hiresbb]{graphicx}        % 画像の挿入
+\usepackage{hyperref}                 % ハイパーリンク
+\usepackage{subcaption}               % サブキャプション
+\usepackage{enumitem}                 % 箇条書きの書式変更
+\usepackage{array}                    % 表の罫線が繋がらない問題対策
+\usepackage{pxjahyper}                % hyperref の文字化け対策
+
+% ----------------------------------------------------------------
+% Page settings
+% ----------------------------------------------------------------
+% Margin
+\usepackage[
+  driver  = dvipdfm,
+  truedimen,
+  top     = 30truemm,
+  bottom  = 25truemm,
+  left    = 20truemm,
+  right   = 20truemm
+]{geometry}
+
+% \setlength\floatsep{0truemm}           % 図と図の間の余白
+% \setlength\textfloatsep{0truemm}       % 本文と図の間の余白
+% \setlength\intextsep{0truemm}          % 本文中の図の余白
+% \setlength\abovecaptionskip{0truemm}   % 図とキャプションの間の余白
+
+% Page number style
+\makeatletter
+\def\ps@plainfoot{%
+  \let\@mkboth\@gobbletwo
+  \let\@oddhead\@empty
+  \def\@oddfoot{\normalfont\hfil-- \thepage\ --\hfil}%
+  \let\@evenhead\@empty
+  \let\@evenfoot\@oddfoot}
+\let\ps@plain\ps@plainfoot
+\makeatother
+\pagestyle{plain}
+
+\setlength\footskip{2\baselineskip}
+\addtolength{\textheight}{-2\baselineskip}
+
+% Contents depth
+\setcounter{tocdepth}{3}
+
+% Caption style
+\captionsetup{
+  format      = plain,
+  labelformat = simple,
+  labelsep    = quad,
+  font        = normalsize
+}
+
+% Bibliography style
+% \bibliographystyle{plain}
+
+% Section font
+\renewcommand{\headfont}{\bfseries}
+
+% Algorithm w/o ``do''
+% \algrenewcommand\algorithmicdo{}
+
+% ----------------------------------------------------------------
+% Commands
+% ----------------------------------------------------------------
+% \begin{theorem}
+\theorembodyfont{\normalfont}
+\newtheorem{definition}{定義}[section]
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}{補題}[section]
+\newtheorem{proposition}{命題}[section]
+\newtheorem{axiom}{公理}[section]
+\newtheorem{corollary}{系}[section]
+\newtheorem{proof}{証明}[section]
+
+% \qed
+\def\qed{\hfill $\Box$}
+
+% \argmax, \argmin
+\newcommand{\argmax}{\operatornamewithlimits{\mathrm{arg\,max}}}
+\newcommand{\argmin}{\operatornamewithlimits{\mathrm{arg\,min}}}
+
+% \ForTo
+% \algnewcommand\algorithmicto{\textbf{to}}
+% \algdef{SE}[FOR]{ForTo}{EndFor}[2]{\algorithmicfor\ #1\ \algorithmicto\ #2\ \algorithmicdo}{\algorithmicend\ \algorithmicfor}%
+% algtext*{EndFor}
+
+% ----------------------------------------------------------------
+% Document
+% ----------------------------------------------------------------
+\begin{document}
+  % Title
+  \include{title}
+  \maketitle
+
+  % Front matter
+  \frontmatter
+  \include{abstract}
+  \tableofcontents
+
+  % Main matter
+  \mainmatter
+  \include{introduction}
+  \include{related_works}
+  % \include{Proposed Method}
+  % \include{evaluation}
+  % \include{conclusion}
+
+  % Back matter
+  \backmatter
+  %\appendix
+  %\bibliography{foo}
+
+\end{document}
